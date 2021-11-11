@@ -8,10 +8,12 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 // import { NavLink } from 'react-router-dom';
 
 
 const Navbar = () => {
+    const { user, logOut } = useAuth()
     return (
 
         <Box sx={{ flexGrow: 1 }}>
@@ -30,10 +32,11 @@ const Navbar = () => {
                         Royal Motors
                     </Typography>
                     <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/products">  <Button color="inherit">Explore</Button></NavLink>
-                    <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/login">  <Button color="inherit">Login</Button></NavLink>
-                    <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/login">  <Button color="inherit">Login</Button></NavLink>
-                    <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/login">  <Button color="inherit">Login</Button></NavLink>
-                    <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/login">  <Button color="inherit">Login</Button></NavLink>
+                    {user?.email ?
+                        <Button onClick={logOut} color="inherit">LogOut</Button> :
+
+                        <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/login">  <Button color="inherit">Login</Button></NavLink>}
+
                 </Toolbar>
             </AppBar>
         </Box>

@@ -32,8 +32,16 @@ const Navbar = () => {
                         Royal Motors
                     </Typography>
                     <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/products">  <Button color="inherit">Explore</Button></NavLink>
+
+
+
                     {user?.email ?
-                        <Button onClick={logOut} color="inherit">LogOut</Button> :
+                        <Box>
+
+                            <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/dashboard">  <Button color="inherit">Dashboard</Button></NavLink>
+
+                            <Button onClick={logOut} color="inherit">LogOut</Button>
+                        </Box> :
 
                         <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/login">  <Button color="inherit">Login</Button></NavLink>}
 

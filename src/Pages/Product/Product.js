@@ -1,5 +1,6 @@
 import { Button, Card, CardContent, CardMedia, Grid, Typography } from '@mui/material';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Product = ({ product }) => {
     const { name, img, describtion, price } = product;
@@ -29,7 +30,9 @@ const Product = ({ product }) => {
                         {price}
                     </Typography>
 
-                    <Button sx={{ marginTop: 3, marginBottom: 6 }} variant="contained">lean more</Button>
+                    <Link to={`/booking/${product._id}`}>
+                        <Button sx={{ marginTop: 3, marginBottom: 6 }} variant="contained">Book now</Button>
+                    </Link>
                 </CardContent>
 
             </Card>

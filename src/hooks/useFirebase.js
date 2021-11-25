@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import initAuthentication from "../Pages/Login/Firebase/Firebase.init";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile } from "firebase/auth";
 
 initAuthentication()
 
@@ -8,14 +8,32 @@ const useFirebase = () => {
     const [user, setUser] = useState({})
     const [loading, setLoading] = useState(true)
     const [authError, setAuthError] = useState('')
+    const [admin, setAdmin] = useState(false)
     const auth = getAuth();
 
-    const registerUser = (email, password) => {
+    const registerUser = (email, password, history, name) => {
         setLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Signed in 
                 setAuthError('');
+                history.replace('/home')
+                const newUser = { email, displayName: name }
+                setUser(newUser)
+
+                //save user
+                saveUser(email, name)
+
+                //send name after create to firebase
+                updateProfile(auth.currentUser, {
+                    displayName: name
+                }).then(() => {
+
+                }).catch((error) => {
+
+                });
+
+
                 // ...
             })
             .catch((error) => {
@@ -27,6 +45,14 @@ const useFirebase = () => {
 
     }
     //login
+
+    //admin
+    useEffect(() => {
+        fetch(`http://localhost:5000/users/${user.email}`)
+
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin))
+    }, [user.email])
     const loginUser = (email, password, location, history) => {
         setLoading(true);
         signInWithEmailAndPassword(auth, email, password)
@@ -71,8 +97,23 @@ const useFirebase = () => {
             .finally(() => setLoading(false));
 
     }
+
+    //save user to database
+
+    const saveUser = (email, displayName) => {
+        const user = { email, displayName }
+        fetch('http://localhost:5000/users', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then()
+    }
     return {
         user,
+        admin,
         registerUser,
         loginUser,
         loading,

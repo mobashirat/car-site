@@ -5,8 +5,9 @@ import TopProduct from '../TopProduct/TopProduct';
 const TopProducts = () => {
     const [topProducts, setTopProducts] = useState([])
 
+
     useEffect(() => {
-        fetch('/fakedata.json')
+        fetch('http://localhost:5000/products')
             .then(res => res.json())
             .then(data => setTopProducts(data))
     }, [])

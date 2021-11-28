@@ -1,0 +1,13 @@
+.addproduct input{
+  width: 70%;
+  height: 40px;
+}
+.add{
+    background-color: goldenrod;
+    color: rgb(8, 8, 8);
+    font-weight: 800;
+}
+.add:hover{
+    box-shadow: 1px 2px 8px 3px gray;
+
+}

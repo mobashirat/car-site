@@ -1,0 +1,6 @@
+.content :hover{
+   cursor: pointer;
+   transition:  1.7s ease;
+   transform: scale(1.1);
+   
+}

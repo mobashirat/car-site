@@ -23,7 +23,7 @@ const Login = () => {
     }
     return (
         <Container>
-            <Typography sx={{ mt: 5 }} variant="h3" gutterBottom component="div">
+            <Typography sx={{ mt: 5, color: 'purple', fontWeight: 800 }} variant="h3" gutterBottom component="div">
                 Login
             </Typography>
             <form onSubmit={handleLogin}>
@@ -48,9 +48,9 @@ const Login = () => {
                     name="password"
                     onChange={handleOnChange}
                     variant="standard" />
-                <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Login</Button>
-                <NavLink to="/register">
-                    <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">For Register</Button>
+                <Button sx={{ width: '75%', m: 1, backgroundColor: 'purple' }} type="submit" variant="contained">Login</Button>
+                <NavLink style={{ textDecoration: 'none' }} to="/register">
+                    <Button sx={{ width: '75%', m: 1, backgroundColor: 'purple' }} type="submit" variant="contained">Sign Up</Button>
                 </NavLink>
             </form>
             {loading && <CircularProgress color="inherit" />}

@@ -19,20 +19,20 @@ import { Container } from '@mui/material';
 const Benefits = () => {
     return (
         <Container>
-            <Typography component="div" variant="h5">
-                Our Benefits for free
+            <Typography component="div" variant="h3" sx={{ color: "black", mb: 5, fontWeight: 800 }}>
+                Our Benefits for free !!
             </Typography>
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={2}>
 
                     <Grid item xs={12} md={4}>
-                        <Card sx={{ display: 'flex', height: '100%' }}>
+                        <Card sx={{ display: 'flex', height: '100%', backgroundColor: 'gray', color: 'aqua', boxShadow: 7, fontWeight: 700 }}>
                             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                                 <CardContent sx={{ flex: '1 0 auto' }}>
-                                    <Typography component="div" variant="h5">
+                                    <Typography sx={{ fontWeight: 700, mb: 3 }} component="div" variant="h5">
                                         Customer Service 24/7
                                     </Typography>
-                                    <Typography variant="subtitle1" color="text.secondary" component="div">
+                                    <Typography sx={{ color: 'white', fontSize: 16 }} variant="subtitle1" color="text.secondary" component="div">
                                         You can come anytime with your car related problems to us.
                                     </Typography>
                                 </CardContent>
@@ -46,13 +46,13 @@ const Benefits = () => {
                         </Card>
                     </Grid>
                     <Grid item xs={12} md={4}>
-                        <Card sx={{ display: 'flex', height: '100%' }}>
+                        <Card sx={{ display: 'flex', height: '100%', backgroundColor: 'gray', color: 'aqua', boxShadow: 7, fontWeight: 700 }}>
                             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                                 <CardContent sx={{ flex: '1 0 auto' }}>
-                                    <Typography component="div" variant="h5">
+                                    <Typography sx={{ fontWeight: 700, mb: 3 }} component="div" variant="h5">
                                         Free Documentation
                                     </Typography>
-                                    <Typography variant="subtitle1" color="text.secondary" component="div">
+                                    <Typography sx={{ color: 'white', fontSize: 16 }} variant="subtitle1" color="text.secondary" component="div">
                                         You will get free docomentation from us without any conditions
                                     </Typography>
                                 </CardContent>
@@ -66,13 +66,13 @@ const Benefits = () => {
                         </Card>
                     </Grid>
                     <Grid item xs={12} md={4}>
-                        <Card sx={{ display: 'flex', height: '100%' }}>
+                        <Card sx={{ display: 'flex', height: '100%', backgroundColor: 'gray', color: 'aqua', boxShadow: 7, fontWeight: 700 }}>
                             <Box sx={{ display: 'flex', flexDirection: 'column' }}>
                                 <CardContent sx={{ flex: '1 0 auto' }}>
-                                    <Typography component="div" variant="h5">
-                                        Auto Loan Facility
+                                    <Typography sx={{ fontWeight: 800, mb: 3 }} component="div" variant="h5">
+                                        Auto Loan Facility Anytime
                                     </Typography>
-                                    <Typography variant="subtitle1" color="text.secondary" component="div">
+                                    <Typography sx={{ color: 'white', fontSize: 16 }} variant="subtitle1" color="text.secondary" component="div">
                                         If you need loan for car we have friendly loan policy for you.
                                     </Typography>
                                 </CardContent>

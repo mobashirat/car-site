@@ -26,7 +26,7 @@ const Footer = () => {
                 <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                     <Grid item xs={12} md={3}>
                         <Typography>
-                            <h2 style={{ textAlign: 'center', paddingTop: '30px ', color: 'red' }}>ROYAL MOTORS</h2>
+                            <h2 style={{ textAlign: 'center', paddingTop: '30px ' }}>ROYAL <span style={{ color: 'red' }}> MOTORS</span></h2>
 
 
                         </Typography>

@@ -21,21 +21,24 @@ const MyOrders = () => {
             .then(data => setMyOrders(data))
     }, [control])
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/deleteOrder/${id}`, {
-            method: 'DELETE',
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount) {
-                    setControl(!control)
-
-                }
+        const proceed = window.confirm('Are you sure you want to delete? ');
+        if (proceed) {
+            fetch(`http://localhost:5000/deleteOrder/${id}`, {
+                method: 'DELETE',
             })
-        console.log(id)
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount) {
+                        setControl(!control)
+
+                    }
+                })
+            console.log(id)
+        }
     }
     return (
         <div>
-            <h4>My Orders: {myOrders.length}</h4>
+            <h1 style={{ color: 'blue' }}>My Orders: {myOrders.length}</h1>
 
             <TableContainer component={Paper}>
 
@@ -62,7 +65,7 @@ const MyOrders = () => {
 
 
 
-                                <Button onClick={() => handleDelete(row?._id)}>cancel</Button>
+                                <Button sx={{ color: 'white', backgroundColor: 'red' }} onClick={() => handleDelete(row?._id)}>cancel</Button>
                             </TableRow>
                         ))}
                     </TableBody>

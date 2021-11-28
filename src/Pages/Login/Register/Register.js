@@ -27,15 +27,11 @@ const Register = () => {
     }
     return (
         <Container>
-            <Typography sx={{ mt: 5 }} variant="h3" gutterBottom component="div">
+            <Typography sx={{ mt: 5, color: 'purple', fontWeight: 800 }} variant="h3" gutterBottom component="div">
                 Sign Up
             </Typography>
             {!loading && <form onSubmit={handleLogin}>
-                {/* <TextField
-                    sx={{ width: '75%', m: 1 }}
-                    id="standard-basic"
-                    label="your name"
-                    variant="standard" /> */}
+
                 <TextField
                     sx={{ width: '75%', m: 1 }}
                     id="standard-basic"
@@ -68,9 +64,9 @@ const Register = () => {
                     name="password2"
                     onBlur={handleOnBlur}
                     variant="standard" />
-                <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Sign up</Button>
-                <NavLink to="/login">
-                    <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">For Login</Button>
+                <Button sx={{ width: '75%', m: 1, backgroundColor: 'purple' }} type="submit" variant="contained">Sign up</Button>
+                <NavLink style={{ textDecoration: 'none' }} to="/login">
+                    <Button sx={{ width: '75%', m: 1, backgroundColor: 'purple' }} type="submit" variant="contained">For Login</Button>
                 </NavLink>
             </form>}
             {loading && <CircularProgress color="inherit" />}

@@ -1,6 +1,7 @@
 import { Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import Product from '../Product/Product';
+import Zoom from 'react-reveal/Zoom';
 
 const Products = () => {
     const [products, setProducts] = useState([])
@@ -10,9 +11,9 @@ const Products = () => {
             .then(data => setProducts(data))
     }, [])
     return (
-        <Container sx={{ my: 5 }}>
-            <Typography sx={{ fontWeight: 500, color: 'blue', m: 3 }} variant="h6" component="div">
-                OUR PRODUCTS
+        <Container sx={{ m: 'auto' }}>
+            <Typography sx={{ fontWeight: 800, color: 'red', m: 3, fontSize: 28 }} variant="h6" component="div">
+                <Zoom left cascade>ALL PRODUCTS</Zoom>
             </Typography>
             <Grid container spacing={2}>
 
@@ -21,7 +22,10 @@ const Products = () => {
                     products?.map(product => <Product
                         key={product.id}
                         product={product}
-                    ></Product>)
+
+                    >
+
+                    </Product>)
 
                 }
 

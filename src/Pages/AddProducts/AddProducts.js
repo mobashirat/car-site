@@ -1,6 +1,7 @@
 import { Button, TextField } from '@mui/material';
 import React from 'react';
 import { useForm } from "react-hook-form";
+import './AddProduct.css'
 
 const AddProducts = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -21,26 +22,32 @@ const AddProducts = () => {
     return (
         <div>
             <h3>Add your Product</h3>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form className="addproduct" onSubmit={handleSubmit(onSubmit)}>
 
                 <input
                     {...register("name", { required: true })}
                     placeholder="name" />
+                <br /><br />
+                <input
+                    {...register("describtion", { required: true })}
+                    placeholder="describtion" />
 
                 <br /><br />
                 <input
                     {...register("img", { required: true })}
-                    placeholder="Product image link"
+                    defaultValue="https://i.ibb.co/d2DQfDw/Toyotta-allion.png"
                 />
                 <br /><br />
                 <input
                     {...register("price", { required: true })}
                     placeholder="price"
                 />
+                <br /><br />
+
 
                 {errors.exampleRequired && <span>This field is required</span>}
                 <br />
-                <input type="submit"
+                <input className="add" type="submit"
                     value="Add product" />
 
             </form>

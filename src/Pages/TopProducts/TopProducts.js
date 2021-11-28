@@ -1,6 +1,7 @@
 import { Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import TopProduct from '../TopProduct/TopProduct';
+import Roll from 'react-reveal/Roll';
 
 const TopProducts = () => {
     const [topProducts, setTopProducts] = useState([])
@@ -13,14 +14,14 @@ const TopProducts = () => {
     }, [])
     return (
         <Container sx={{ my: 5 }}>
-            <Typography sx={{ fontWeight: 500, color: 'blue', m: 3 }} variant="h6" component="div">
-                OUR PRODUCTS
-            </Typography>
+            <Roll> <Typography sx={{ fontWeight: 800, color: 'red', m: 3 }} variant="h3" component="div">
+                OUR TOP PRODUCTS
+            </Typography></Roll>
             <Grid container spacing={2}>
 
 
                 {
-                    topProducts?.slice(4).map(topProduct => <TopProduct
+                    topProducts?.slice(0, 6).map(topProduct => <TopProduct
                         key={topProduct.id}
                         topProduct={topProduct}
                     ></TopProduct>)

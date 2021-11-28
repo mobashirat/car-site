@@ -66,14 +66,15 @@ const Booking = () => {
                 <Grid container spacing={2}>
 
                     <Grid item xs={12} md={6}>
-                        <Card sx={{ display: 'flex', height: '100%', mt: 4 }}>
-                            <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                                <CardContent sx={{ flex: '1 0 auto' }}>
+                        <Card sx={{ display: 'flex', height: '100%', mt: 4, backgroundColor: 'black' }}>
+                            <Box sx={{ display: 'flex', flexDirection: 'column', my: 'auto' }}>
+                                <CardContent sx={{ flex: '1 0 auto', color: 'aqua' }}>
                                     <Typography component="div" variant="h5">
                                         {product?.name}
                                     </Typography>
-                                    <Typography variant="subtitle1" color="text.secondary" component="div">
-                                        {product?.price}
+
+                                    <Typography sx={{ color: 'white', mt: 3, fontSize: 19, fontWeight: 800 }} variant="subtitle1" color="text.secondary" component="div">
+                                        Price : {product?.price}
                                     </Typography>
                                 </CardContent>
 
@@ -87,7 +88,7 @@ const Booking = () => {
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <form onSubmit={handleBookSubmit}>
-                            <h2>Your information</h2>
+                            <h2 style={{ color: 'goldenrod', fontWeight: 800 }}>Your information</h2>
 
                             <TextField
                                 sx={{ width: '100%', mb: 3 }}
@@ -122,7 +123,7 @@ const Booking = () => {
                                 placeholder="your address"
                                 size="small"
                             />
-                            <Button type="submit">Order Place</Button>
+                            <Button sx={{ backgroundColor: 'goldenrod', color: 'white' }} type="submit" variant="contained">Order Place</Button>
                         </form>
                         {bookSuccess &&
                             <Alert severity="success">Booked Successfully</Alert>}

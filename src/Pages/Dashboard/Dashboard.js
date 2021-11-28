@@ -30,6 +30,7 @@ import ManageProduct from '../ManageProduct/ManageProduct';
 import ManageOrders from '../ManageOrders/ManageOrders';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
 import AddProducts from '../AddProducts/AddProducts';
+import Review from '../Review/Review';
 
 
 const drawerWidth = 150;
@@ -145,6 +146,9 @@ function Dashboard(props) {
                     </Route>
                     <Route path={`${path}/payment`}>
                         <Payment></Payment>
+                    </Route>
+                    <Route path={`${path}/reviews`}>
+                        <Review></Review>
                     </Route>
 
                     {/* for admin */}

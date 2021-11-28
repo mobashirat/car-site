@@ -10,7 +10,7 @@ const Review = () => {
     const [reviewSuccess, setreviewSuccess] = useState(false)
     console.log(reviewSuccess)
 
-    const { register, reset, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, reset, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         data.email = user?.email;
         fetch('http://localhost:5000/reviews', {

@@ -62,6 +62,12 @@ const Navbar = () => {
                 <ListItem button>
 
                     <ListItemText>
+                        <Link style={{ textDecoration: 'none', color: 'black', fontWeight: 700 }} to="/home">Home</Link>
+                    </ListItemText>
+                </ListItem>
+                <ListItem button>
+
+                    <ListItemText>
                         <Link style={{ textDecoration: 'none', color: 'black', fontWeight: 700 }} to="/products">Explore</Link>
                     </ListItemText>
                 </ListItem>
@@ -115,7 +121,8 @@ const Navbar = () => {
                         <Typography className={navLogo} variant="h6" component="div" sx={{ flexGrow: 1, fontSize: 28 }}>
                             Royal Motors
                         </Typography>
-                        <Box className={navItemContainer}>
+                        <Box className={navItemContainer} >
+                            <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/home"> Home</NavLink>
                             <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/products">  Explore</NavLink>
 
 

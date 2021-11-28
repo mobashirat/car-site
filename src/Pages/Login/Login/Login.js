@@ -5,7 +5,7 @@ import useAuth from '../../../hooks/useAuth';
 
 const Login = () => {
     const [loginData, setLoginData] = useState({})
-    const { user, loginUser, loading, authError } = useAuth()
+    const { user, loginUser, loading } = useAuth()
 
     const location = useLocation()
     const history = useHistory()

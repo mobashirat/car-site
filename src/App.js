@@ -11,12 +11,16 @@ import Register from './Pages/Login/Register/Register';
 import NotFound from './Pages/NotFound/NotFound';
 import Products from './Pages/Products/Products';
 
+import Navbar from './Pages/Shared/Navbar/Navbar'
+
 function App() {
   return (
     <div className="App">
       <AuthProvider>
         <Router>
+          <Navbar></Navbar>
           <Switch>
+
             <Route path="/home">
               <Home></Home>
             </Route>
@@ -41,6 +45,7 @@ function App() {
               <NotFound></NotFound>
             </Route>
           </Switch>
+
         </Router>
       </AuthProvider>
     </div>

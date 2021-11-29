@@ -13,7 +13,7 @@ const Review = () => {
     const { register, reset, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         data.email = user?.email;
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://obscure-springs-61189.herokuapp.com/reviews', {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(data)

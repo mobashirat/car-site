@@ -35,7 +35,7 @@ const Booking = () => {
             ...bookingInfo,
             customerName: product?.name
         }
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://obscure-springs-61189.herokuapp.com/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -54,7 +54,7 @@ const Booking = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/singleProduct/${serviceId}`)
+        fetch(`https://obscure-springs-61189.herokuapp.com/singleProduct/${serviceId}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [])

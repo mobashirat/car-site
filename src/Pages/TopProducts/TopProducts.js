@@ -8,7 +8,7 @@ const TopProducts = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://obscure-springs-61189.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setTopProducts(data))
     }, [])

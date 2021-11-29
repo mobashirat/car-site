@@ -15,7 +15,7 @@ const MyOrders = () => {
     const [control, setControl] = useState(false)
 
     useEffect(() => {
-        const url = `http://localhost:5000/bookings?email=${user.email}`
+        const url = `https://obscure-springs-61189.herokuapp.com/bookings?email=${user.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setMyOrders(data))
@@ -23,7 +23,7 @@ const MyOrders = () => {
     const handleDelete = (id) => {
         const proceed = window.confirm('Are you sure you want to delete? ');
         if (proceed) {
-            fetch(`http://localhost:5000/deleteOrder/${id}`, {
+            fetch(`https://obscure-springs-61189.herokuapp.com/deleteOrder/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())

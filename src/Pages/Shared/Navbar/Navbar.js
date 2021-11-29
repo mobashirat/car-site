@@ -122,8 +122,8 @@ const Navbar = () => {
                             Royal Motors
                         </Typography>
                         <Box className={navItemContainer} >
-                            <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/home"> Home</NavLink>
-                            <NavLink style={{ textDecoration: 'none', color: 'white' }} to="/products">  Explore</NavLink>
+                            <NavLink style={{ textDecoration: 'none', color: 'white', fontSize: 18 }} to="/home"> Home</NavLink>
+                            <NavLink style={{ textDecoration: 'none', color: 'white', paddingLeft: 20, fontSize: 18 }} to="/products">  Explore</NavLink>
 
 
 
